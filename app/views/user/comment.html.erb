@@ -1,0 +1,23 @@
+
+<% if @comments.size > 0 %>
+  <h1>Posted <%= @comments.size %> comments.</h1>
+<div class="message-board">
+  <table cell-spacing=0>
+    <tr>
+      <th>Commented_by</th>
+      <th>Commented_Time</th>
+      <th>Comments</th>
+    </tr>
+
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><div><%= link_to comment.user.first_name+""+comment.user.last_name,user_photo_path(:user_id => comment.user_id,:user_firstname => comment.user.first_name,:user_lastname => comment.user.last_name)%></div></td>
+        <td><div><%= comment.created_at%></div></td>
+        <td> <div><%= comment.comment_text %></div></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<% else %>
+  <h1>NO COMMENTS</h1>
+<% end %>

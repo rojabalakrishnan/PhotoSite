@@ -1,0 +1,23 @@
+
+<% if @photos.size > 0 %>
+<h1><%= @user_firstname+""+ @user_lastname %> Posted <%= @photos.size %> Photos.</h1>
+<div class="message-board">
+  <table cell-spacing=0>
+    <tr>
+      <th>Photos</th>
+      <th>Created_Time</th>
+      <th>Comments</th>
+    </tr>
+
+    <% @photos.each do |photo| %>
+      <tr>
+        <td> <div><%= image_tag "https://photosite-roja.s3-us-west-2.amazonaws.com/#{photo.file_name}",:size => "100x100" %></div></td>
+        <td><div><%= photo.created_at%></div></td>
+        <td><div><%= link_to "comments",user_comment_path(:photo_id => photo.id)%></div></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<% else %>
+  <h1>NO PHOTOS</h1>
+<% end %>

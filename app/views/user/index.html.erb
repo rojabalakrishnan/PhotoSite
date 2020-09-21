@@ -1,0 +1,17 @@
+<h1>PhotoSite User List</h1>
+<h2>There are <%= @users_all.size %> Users</h2>
+<div class="message-board">
+  <table>
+    <tr>
+      <th>User</th>
+      <th>FullName</th>
+    </tr>
+
+    <% @users_all.each do |user| %>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= link_to user.first_name+""+user.last_name,user_photo_path(:user_id => user.id,:user_firstname => user.first_name,:user_lastname => user.last_name)%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
