@@ -1,7 +1,7 @@
-<h1>PhotoSite User List</h1>
-<h2>There are <%= @users_all.size %> Users</h2>
+<h1 style="font-family: 'Bookman Old Style'; color: crimson">PhotoSite User List</h1>
+<h2 style="font-family: 'Bell MT';">There are <%= @users_all.size %> Users</h2>
 <div class="message-board">
-  <table>
+  <table border="5" bordercolor="pink" align="center">
     <tr>
       <th>User</th>
       <th>FullName</th>
@@ -9,9 +9,10 @@
 
     <% @users_all.each do |user| %>
       <tr>
-        <td><%= user.id%></td>
-        <td><%= link_to user.first_name+""+user.last_name,user_photo_path(:user_id => user.id,:user_firstname => user.first_name,:user_lastname => user.last_name)%></td>
+        <td align="center" valign="center" height=50 width=50><%= user.id%></td>
+        <td align="center" valign="center" height=50 width=50><%= link_to user.first_name+""+user.last_name,user_photo_path(:user_id => user.id,:user_firstname => user.first_name,:user_lastname => user.last_name)%></td>
       </tr>
     <% end %>
   </table>
 </div>
+

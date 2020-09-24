@@ -1,8 +1,8 @@
 
 <% if @photos.size > 0 %>
-<h1><%= @user_firstname+""+ @user_lastname %> Posted <%= @photos.size %> Photos.</h1>
+<h3 style="font-family: 'Bookman Old Style'; color: crimson"><%= @user_firstname+""+ @user_lastname %> Posted <%= @photos.size %> Photos.</h3>
 <div class="message-board">
-  <table cell-spacing=0>
+  <table border="5" bordercolor="pink" align="center" cell-spacing=0>
     <tr>
       <th>Photos</th>
       <th>Created_Time</th>
@@ -11,9 +11,9 @@
 
     <% @photos.each do |photo| %>
       <tr>
-        <td> <div><%= image_tag "https://photosite-roja.s3-us-west-2.amazonaws.com/#{photo.file_name}",:size => "100x100" %></div></td>
-        <td><div><%= photo.created_at%></div></td>
-        <td><div><%= link_to "comments",user_comment_path(:photo_id => photo.id)%></div></td>
+        <td border=3 height=100 width=100> <%= image_tag "https://photosite-rojabalakrishnan.s3.amazonaws.com/#{photo.file_name}",:size => "400x300"%></td>
+        <td border=3 height=100 width=100 align="center" valign="center"><%= photo.date_time%></div></td>
+        <td border=3 height=100 width=100 align="center" valign="center"><%= link_to "comments",user_comment_path(:photo_id => photo.id,:user_firstname => @user_firstname,:user_lastname => @user_lastname)%></td>
       </tr>
     <% end %>
   </table>

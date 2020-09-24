@@ -10,6 +10,8 @@ class UserController < ApplicationController
   end
   def comment
     @photo_id=params[:photo_id]
+    @user_firstname=params[:user_firstname]
+    @user_lastname=params[:user_lastname]
     @comments = Comment.includes(:user).where(" photo_id= ?",@photo_id )
   end
 end
