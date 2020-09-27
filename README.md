@@ -1,4 +1,3 @@
-# README
 
 # Deploy a sample Photosite Rails Application to AWS via Docker[ <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2zNQi16j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/5z1b8vht7cx8pxy70j1x.png" width="30" height="30"> + <img src="https://www.quotecolo.com/wp-content/uploads/2019/02/AWS-EC2-00.png" width="50" height="50" > + <img src="https://miro.medium.com/max/1000/1*B9CIOrxdROHvtdmouQA1_A.png" width="50" height="50" > ]
 In this project, we will create a Ruby on Rails application that implements only a part of a Photo Sharing site specifically only the comments section with data that already entered into a SQL-Lite database.
