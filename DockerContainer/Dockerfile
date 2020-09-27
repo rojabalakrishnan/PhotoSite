@@ -12,13 +12,13 @@ RUN gem install bundler:2.1.4
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
+COPY ../package.json yarn.lock ./
 RUN yarn install --check-files
 
 COPY Gemfile* ./
 RUN bundle install
 
-COPY . .
+COPY .. .
 
 ENV PATH=./bin:$PATH
 EXPOSE 3000
